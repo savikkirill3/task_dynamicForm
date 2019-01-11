@@ -5,8 +5,7 @@ import {ElementBase} from "../../model/element-base";
 
 @Component({
   selector: "dynamic-form-element",
-  templateUrl: "./dynamic-form-element.component.html",
-  styleUrls: ["./dynamic-form-element.component.css"]
+  templateUrl: "./dynamic-form-element.component.html"
 })
 export class DynamicFormElementComponent {
 

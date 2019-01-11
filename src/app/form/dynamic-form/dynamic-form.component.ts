@@ -7,19 +7,18 @@ import {ElementsService} from "../../shared/elements.service";
 @Component({
   selector: "dynamic-form",
   templateUrl: "./dynamic-form.component.html",
-  styleUrls: ["./dynamic-form.component.css"],
   providers: [ElementsService]
 })
 export class DynamicFormComponent implements OnInit {
 
-  @Input() elements: ElementBase<any>[] = [];
+  @Input() elements: ElementBase<string>[] = [];
   form: FormGroup;
 
-  constructor(private es: ElementsService) {
+  constructor(private elementsService: ElementsService) {
   }
 
   ngOnInit() {
-    this.form = this.es.toFormGroup(this.elements);
+    this.form = this.elementsService.toFormGroup(this.elements);
   }
 
   onSubmit() {

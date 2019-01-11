@@ -1,17 +1,17 @@
 <div [formGroup]="form">
 
-  <label class="" [attr.for]="element.key">{{element.label}}</label>
+  <label [attr.for]="element.key">{{element.label}}</label>
 
   <div [ngSwitch]="element.controlType">
 
-    <input *ngSwitchCase="'textbox'" [formControlName]="element.key" [id]="element.key" [type]="element.type" class="form-control">
+    <input *ngSwitchCase="'textbox'" [formControlName]="element.key" [id]="element.key" [type]="element.type">
 
-    <select *ngSwitchCase="'dropdown'" [formControlName]="element.key" [id]="element.key" class="form-control">
+    <select *ngSwitchCase="'dropdown'" [formControlName]="element.key" [id]="element.key" >
       <option *ngFor="let opt of element.options" [value]="opt.key">{{opt.value}}</option>
     </select>
   </div>
 
-  <div class="alert alert-danger" *ngIf="!isValid && isDirty">
+  <div *ngIf="!isValid && isDirty">
     {{element.label}} is required
   </div>
 
