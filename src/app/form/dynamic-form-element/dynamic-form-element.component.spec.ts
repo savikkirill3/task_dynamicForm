@@ -1,6 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DynamicFormElementComponent } from './dynamic-form-element.component';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
 
 describe('DynamicFormElementComponent', () => {
   let component: DynamicFormElementComponent;
@@ -8,7 +9,8 @@ describe('DynamicFormElementComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DynamicFormElementComponent ]
+      declarations: [ DynamicFormElementComponent ],
+      schemas: [ NO_ERRORS_SCHEMA ]
     })
     .compileComponents();
   }));
@@ -16,9 +18,8 @@ describe('DynamicFormElementComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(DynamicFormElementComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
 
+  });
   it('should create', () => {
     expect(component).toBeTruthy();
   });

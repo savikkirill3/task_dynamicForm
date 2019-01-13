@@ -19,7 +19,7 @@ export class FormsService {
         label: "Email",
         type: "email",
         required: true,
-        order: 3
+        order: 2
       }),
       new TextBoxElement({
         key: "date",

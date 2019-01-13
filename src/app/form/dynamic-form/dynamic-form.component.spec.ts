@@ -1,16 +1,24 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
+import {DynamicFormComponent} from './dynamic-form.component';
+import {NO_ERRORS_SCHEMA} from '@angular/core';
+import {By, By} from 'protractor';
 
-import { DynamicFormComponent } from './dynamic-form.component';
-
+const formInput = {
+  date: '2019-01-02',
+  email: 'savikkirill3@gmail.com',
+  firstname: 'kirill',
+  skill: '2'
+};
 describe('DynamicFormComponent', () => {
   let component: DynamicFormComponent;
   let fixture: ComponentFixture<DynamicFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ DynamicFormComponent ]
+      declarations: [DynamicFormComponent],
+      schemas: [NO_ERRORS_SCHEMA]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
@@ -22,4 +30,5 @@ describe('DynamicFormComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });

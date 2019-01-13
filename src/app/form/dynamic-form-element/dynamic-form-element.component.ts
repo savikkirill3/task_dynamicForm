@@ -1,11 +1,11 @@
-import {Component, Input} from "@angular/core";
-import {FormGroup} from "@angular/forms";
+import {Component, Input} from '@angular/core';
+import {FormGroup} from '@angular/forms';
 
-import {ElementBase} from "../../model/element-base";
+import {ElementBase} from '../../model/element-base';
 
 @Component({
-  selector: "dynamic-form-element",
-  templateUrl: "./dynamic-form-element.component.html"
+  selector: 'dynamic-form-element',
+  templateUrl: './dynamic-form-element.component.html'
 })
 export class DynamicFormElementComponent {
 
@@ -14,15 +14,6 @@ export class DynamicFormElementComponent {
   @Input()
   form: FormGroup;
 
-  constructor() {
-  }
-
-  get isValid() {
-    return this.form.controls[this.element.key].valid;
-  }
-
-  get isDirty() {
-    return this.form.controls[this.element.key].dirty;
-  }
+  constructor() {}
 
 }

@@ -1,12 +1,12 @@
-import {Component, OnInit, Input} from "@angular/core";
+import {Component, OnInit, Input} from '@angular/core';
 
-import {FormGroup} from "@angular/forms";
-import {ElementBase} from "../../model/element-base";
-import {ElementsService} from "../../shared/elements.service";
+import {FormGroup} from '@angular/forms';
+import {ElementBase} from '../../model/element-base';
+import {ElementsService} from '../../shared/elements.service';
 
 @Component({
-  selector: "dynamic-form",
-  templateUrl: "./dynamic-form.component.html",
+  selector: 'dynamic-form',
+  templateUrl: './dynamic-form.component.html',
   providers: [ElementsService]
 })
 export class DynamicFormComponent implements OnInit {

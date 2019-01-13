@@ -5,13 +5,13 @@ import {ElementBase} from "./model/element-base";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
   providers: [FormsService]
 })
 export class AppComponent {
   elements: ElementBase<any>[];
 
-  constructor(private fs: FormsService) {
-    this.elements = fs.getElements();
+  constructor(private formsService: FormsService) {
+    this.elements = formsService.getElements();
+    console.log(this.elements);
   }
 }

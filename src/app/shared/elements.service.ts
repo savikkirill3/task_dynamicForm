@@ -8,7 +8,7 @@ export class ElementsService {
 
     constructor() { }
 
-    toFormGroup(elements: ElementBase<any>[]) {
+    toFormGroup(elements: ElementBase<string>[]) {
         let group: any = {};
 
         elements.forEach(element => {

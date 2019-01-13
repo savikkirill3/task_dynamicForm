@@ -1,10 +1,8 @@
-<div>
-  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+<form (ngSubmit)="onSubmit()" [formGroup]="form">
 
-    <div *ngFor="let element of elements">
-      <dynamic-form-element [element]="element" [form]="form"></dynamic-form-element>
-    </div>
+  <div *ngFor="let element of elements">
+    <dynamic-form-element [element]="element" [form]="form"></dynamic-form-element>
+  </div>
 
-    <input type="submit" value="Save">
-  </form>
-</div>
+  <button type="submit">Save</button>
+</form>
