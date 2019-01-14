@@ -1,14 +1,7 @@
 import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 import {DynamicFormComponent} from './dynamic-form.component';
 import {NO_ERRORS_SCHEMA} from '@angular/core';
-import {By, By} from 'protractor';
 
-const formInput = {
-  date: '2019-01-02',
-  email: 'savikkirill3@gmail.com',
-  firstname: 'kirill',
-  skill: '2'
-};
 describe('DynamicFormComponent', () => {
   let component: DynamicFormComponent;
   let fixture: ComponentFixture<DynamicFormComponent>;
@@ -29,6 +22,22 @@ describe('DynamicFormComponent', () => {
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('should not call onChanges if form is invalid', () => {
+    component.form.patchValue({
+      firstname: '',
+      email: 'aaa@mail.ru',
+      date: '',
+      skill: 1
+    });
+
+    fixture.detectChanges();
+
+    spyOn(component.onChange, 'emit');
+    component.onSubmit();
+
+    expect(component.onChange.emit).toHaveBeenCalled();
   });
 
 });

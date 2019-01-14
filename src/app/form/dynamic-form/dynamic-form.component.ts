@@ -1,4 +1,4 @@
-import {Component, OnInit, Input} from '@angular/core';
+import {Component, OnInit, Input, EventEmitter, Output} from '@angular/core';
 
 import {FormGroup} from '@angular/forms';
 import {ElementBase} from '../../model/element-base';
@@ -11,6 +11,7 @@ import {ElementsService} from '../../shared/elements.service';
 })
 export class DynamicFormComponent implements OnInit {
 
+  @Output() onChange: EventEmitter<any> = new EventEmitter();
   @Input() elements: ElementBase<string>[] = [];
   form: FormGroup;
 
@@ -23,7 +24,7 @@ export class DynamicFormComponent implements OnInit {
 
   onSubmit() {
     if (this.form.valid) {
-      console.log(this.form.value);
+      this.onChange.emit(this.form.value);
     }
   }
 
